@@ -11,11 +11,8 @@ app.use("/api/users", userRoutes);
 app.get("/api/regions-locales", (req, res) => {
   try {
     const supportedRegions = Object.keys(regions);
-    const supportedLocales = Object.values(regions);
     return res.json({
-      regionsLocales: regions,
       regions: supportedRegions,
-      locale: supportedLocales,
     });
   } catch (e) {
     return res
